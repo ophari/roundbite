@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\AdminProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,4 @@ Route::resources(['category' => CategoryController::class]);
 Route::resources(['keranjang' => KeranjangController::class]);
 Route::resources(['home' => HomeController::class]);
 Route::resources(['checkout' => CheckoutController::class]);
+Route::resources(['admin_produk' => AdminProdukController::class]);

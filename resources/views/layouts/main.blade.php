@@ -13,6 +13,10 @@
     <link href="template_dashboard/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="template_dashboard/css/style.css" rel="stylesheet">
 	<link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+ 
+
 
 </head>
 <body>
@@ -40,7 +44,7 @@
     ***********************************-->
     <!-- Required vendors -->
   <script src="template_dashboard/vendor/global/global.min.js"></script>
-	<script src="template_dashboard/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	{{-- <script src="template_dashboard/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script> --}}
 	<script src="template_dashboard/vendor/chart.js/Chart.bundle.min.js"></script>
   <script src="template_dashboard/js/custom.min.js"></script>
 	<script src="template_dashboard/js/deznav-init.js"></script>
@@ -56,7 +60,26 @@
 	<script src="template_dashboard/vendor/peity/jquery.peity.min.js"></script>
 	
 	<!-- Dashboard 1 -->
-	<script src="./js/dashboard/dashboard-1.js"></script>
+	<script src="template_dashboard/js/dashboard/dashboard-1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    // Pastikan pesan flash berhasil atau gagal tersedia
+    @if(Session::has('success'))
+        Swal.fire({
+            icon: 'success',
+            title: '{{ session('success') }}',
+            showConfirmButton: true,
+            
+        });
+    @elseif(Session::has('error'))
+        Swal.fire({
+            icon: 'error',
+            title: '{{ session('error') }}',
+            showConfirmButton: true,
+            
+        });
+    @endif
+</script>
 	
 	
 </body>
